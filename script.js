@@ -23,3 +23,15 @@ document.querySelector('.details')?.addEventListener('click', e => {
 });
 
 const sound = document.querySelector('.sound'); sound?.addEventListener('click', () => { sound.textContent = sound.textContent.includes('○') ? '◉ звук' : '○ звук'; });
+
+document.querySelectorAll('.law-tab').forEach(button => button.addEventListener('click', () => {
+  document.querySelectorAll('.law-tab').forEach(item => item.classList.remove('active'));
+  document.querySelectorAll('.law-copy').forEach(item => item.classList.remove('active'));
+  button.classList.add('active'); document.getElementById(button.dataset.law)?.classList.add('active');
+}));
+
+document.querySelectorAll('.research-button').forEach(button => button.addEventListener('click', () => {
+  document.querySelectorAll('.research-button').forEach(item => item.classList.remove('active'));
+  document.querySelectorAll('.research-copy-item').forEach(item => item.classList.remove('active'));
+  button.classList.add('active'); document.getElementById(button.dataset.research)?.classList.add('active');
+}));
