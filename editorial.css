@@ -1,0 +1,61 @@
+/* Reading and disclosure layout. Loaded after the original scene styles. */
+.topbar { background: #f2f0e9f5; color: #17201f; mix-blend-mode: normal; border-bottom: 1px solid #17201f18; }
+section[id],summary { scroll-margin-top: 80px; }
+.reading-section { padding: clamp(56px, 8vw, 100px) 0; max-width: 850px; }
+.reading-section h2 { font: 500 clamp(2.2rem, 4.4vw, 4rem)/1.08 'Playfair Display', Georgia, serif; letter-spacing: -.035em; margin: 0 0 28px; max-width: 800px; }
+.reading-section p { font-size: 18px; line-height: 1.7; max-width: 750px; }
+.reading-section .eyebrow { font-size: 11px; }
+.reading-section .section-lede { font: 500 clamp(1.4rem, 2.2vw, 2rem)/1.4 'Playfair Display', Georgia, serif; }
+.example-label,.source-note { font-size: 13px!important; line-height: 1.6; color: #505e57; margin: 24px 0; }
+.disclosure { border-top: 1px solid currentColor; margin: 0; }
+.disclosure:last-of-type { border-bottom: 1px solid currentColor; }
+.disclosure summary { display: flex; justify-content: space-between; gap: 20px; padding: 22px 12px; font-weight: 600; font-size: 18px; line-height: 1.45; cursor: pointer; list-style: none; }
+.disclosure summary::-webkit-details-marker { display: none; }
+.disclosure summary::after { content: '+'; flex: 0 0 24px; text-align: center; font-size: 24px; line-height: 1; }
+.disclosure[open] > summary::after { content: '−'; }
+.disclosure summary:hover,.disclosure summary:focus-visible { background: #f4d33e; color: #17201f; }
+.disclosure summary:focus-visible { outline: 2px solid currentColor; outline-offset: 3px; }
+.disclosure-body { padding: 0 12px 24px; }
+.disclosure-body p { margin: 0 0 16px; }
+.disclosure-body a,.source-note a { color: inherit; text-decoration: underline; text-underline-offset: 4px; }
+.family-section { background: transparent; }
+.family-options { margin: 32px 0; }
+.study-results { overflow-x: auto; margin: 32px 0; }
+.study-results table { border-collapse: collapse; width: 100%; font-size: 16px; }
+.study-results caption { text-align: left; padding-bottom: 15px; color: #505e57; font-size: 13px; }
+.study-results th,.study-results td { text-align: left; border-bottom: 1px solid #a7aaa2; padding: 15px 12px; font-weight: 400; }
+.study-results thead { background: #e7e4d8; }
+.study-results tbody tr:first-child { background: #f4d33e; }
+.study-results td:last-child { font-size: 23px; font-weight: 600; }
+.paper-class { padding: clamp(56px,8vw,100px) 7vw; }
+.paper-class h2 { font-size: clamp(2.2rem,4.4vw,4rem); margin-bottom: 28px; }
+.paper-class .disclosure { border-color: #718178; }
+.paper-class .disclosure-body { max-width: 740px; line-height: 1.7; }
+.paper-class .eyebrow { color: #c7d1c8; }
+.personal-story { grid-template-columns: minmax(0,1fr) minmax(0,1.5fr); }
+.personal-intro,.personal-body { min-width: 0; }
+.personal-intro h2 { font-size: clamp(2.4rem,4.6vw,4.8rem); line-height: 1.08; }
+.personal-body .story-ending { font: italic 500 clamp(1.8rem,3vw,3rem)/1.2 'Playfair Display',Georgia,serif; color: #354c41; }
+.stat-number { font-size: clamp(7rem,23vw,20rem); line-height: 1.15; letter-spacing: -.055em; white-space: nowrap; }
+.stat-number span { vertical-align: baseline; }
+.stat-caption { margin-top: 1rem; }
+.law-explorer { grid-template-columns: minmax(0,1fr) minmax(0,1.3fr); gap: 40px; }
+.law-intro h2 { font-size: clamp(2rem,3.6vw,3.5rem); }
+.law-tab[aria-pressed="true"] { background: #f4d33e; }
+.epilogue { display: block; min-height: auto; }
+.epilogue-wide { padding: 0; }
+.epilogue-wide h2 { font-size: clamp(2.5rem,5vw,5rem); line-height: 1.1; }
+@media (max-width: 750px) {
+  .personal-story { display: block; padding: 60px 7vw; }
+  .personal-intro { position: static; margin-bottom: 32px; }
+  .law-explorer { display: block; padding: 60px 0; }
+  .reading-section p { font-size: 17px; }
+  .disclosure summary { font-size: 17px; padding: 20px 4px; }
+  .disclosure-body { padding: 0 4px 20px; }
+  .study-results th,.study-results td { padding: 12px 6px; font-size: 14px; }
+  .study-results td:last-child { font-size: 20px; }
+}
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  *,*::before,*::after { animation: none!important; transition: none!important; }
+}
