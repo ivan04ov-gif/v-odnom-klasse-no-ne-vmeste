@@ -1,4 +1,24 @@
 /* Reading and disclosure layout. Loaded after the original scene styles. */
+.evidence-scene { display: block; min-height: 0; padding: clamp(56px,8vw,100px) 7vw; }
+.evidence-inner { max-width: 1040px; margin: auto; min-width: 0; }
+.evidence-scene h2 { font: 500 clamp(2.1rem,4.5vw,4.3rem)/1.12 'Playfair Display',Georgia,serif; letter-spacing: -.03em; margin: 0 0 32px; }
+.evidence-scene p { max-width: 760px; font-size: 18px; line-height: 1.7; }
+.evidence-scene .eyebrow { font-size: 12px; }
+.event-grid { display: grid; grid-template-columns: repeat(3,minmax(0,1fr)); gap: 32px; margin: 40px 0; }
+.event-grid article { border-top: 1px solid #86958b; padding-top: 20px; min-width: 0; }
+.event-grid .event-number { font-size: 15px; letter-spacing: .04em; color: #f5d640; }
+.event-grid h3 { font: 500 25px/1.3 Georgia,serif; margin: 20px 0 12px; }
+.event-grid p { font-size: 16px; line-height: 1.65; margin: 0; }
+.archive { background: #242d27; color: #f2f0e9; }
+.archive .eyebrow { color: #b4c4b6; }
+.source-disclosure { font: 400 14px/1.6 Arial,sans-serif; margin: 16px 0 24px; color: inherit; text-align: left; letter-spacing: normal; text-transform: none; }
+.source-disclosure summary { display: inline-block; cursor: pointer; list-style: none; padding: 5px 0; text-decoration: underline; text-underline-offset: 4px; }
+.source-disclosure summary::-webkit-details-marker { display: none; }
+.source-disclosure summary:focus-visible { outline: 2px solid currentColor; outline-offset: 4px; }
+.source-disclosure > div { border-left: 2px solid #8b9a8c; padding: 10px 16px; margin-top: 8px; max-width: 730px; overflow-wrap: anywhere; }
+.source-disclosure a { color: inherit; text-decoration: underline; text-underline-offset: 3px; }
+.source-disclosure[open] summary { font-weight: 700; }
+@media (max-width: 950px) { .event-grid { grid-template-columns: 1fr; gap: 28px; } .evidence-scene p { font-size: 17px; } }
 .topbar { background: #f2f0e9f5; color: #17201f; mix-blend-mode: normal; border-bottom: 1px solid #17201f18; }
 section[id],summary { scroll-margin-top: 80px; }
 .reading-section { padding: clamp(56px, 8vw, 100px) 0; max-width: 850px; }
@@ -9,12 +29,12 @@ section[id],summary { scroll-margin-top: 80px; }
 .example-label,.source-note { font-size: 13px!important; line-height: 1.6; color: #505e57; margin: 24px 0; }
 .disclosure { border-top: 1px solid currentColor; margin: 0; }
 .disclosure:last-of-type { border-bottom: 1px solid currentColor; }
-.disclosure summary { display: flex; justify-content: space-between; gap: 20px; padding: 22px 12px; font-weight: 600; font-size: 18px; line-height: 1.45; cursor: pointer; list-style: none; }
-.disclosure summary::-webkit-details-marker { display: none; }
-.disclosure summary::after { content: '+'; flex: 0 0 24px; text-align: center; font-size: 24px; line-height: 1; }
+.disclosure > summary { display: flex; justify-content: space-between; gap: 20px; padding: 22px 12px; font-weight: 600; font-size: 18px; line-height: 1.45; cursor: pointer; list-style: none; }
+.disclosure > summary::-webkit-details-marker { display: none; }
+.disclosure > summary::after { content: '+'; flex: 0 0 24px; text-align: center; font-size: 24px; line-height: 1; }
 .disclosure[open] > summary::after { content: '−'; }
-.disclosure summary:hover,.disclosure summary:focus-visible { background: #f4d33e; color: #17201f; }
-.disclosure summary:focus-visible { outline: 2px solid currentColor; outline-offset: 3px; }
+.disclosure > summary:hover,.disclosure > summary:focus-visible { background: #f4d33e; color: #17201f; }
+.disclosure > summary:focus-visible { outline: 2px solid currentColor; outline-offset: 3px; }
 .disclosure-body { padding: 0 12px 24px; }
 .disclosure-body p { margin: 0 0 16px; }
 .disclosure-body a,.source-note a { color: inherit; text-decoration: underline; text-underline-offset: 4px; }
@@ -50,7 +70,7 @@ section[id],summary { scroll-margin-top: 80px; }
   .personal-intro { position: static; margin-bottom: 32px; }
   .law-explorer { display: block; padding: 60px 0; }
   .reading-section p { font-size: 17px; }
-  .disclosure summary { font-size: 17px; padding: 20px 4px; }
+  .disclosure > summary { font-size: 17px; padding: 20px 4px; }
   .disclosure-body { padding: 0 4px 20px; }
   .study-results th,.study-results td { padding: 12px 6px; font-size: 14px; }
   .study-results td:last-child { font-size: 20px; }
